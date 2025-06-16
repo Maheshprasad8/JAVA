@@ -1,0 +1,67 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Pen{
+    String color;
+    String type;
+    public void write(){
+        System.out.println("Writing Something");
+    }
+    public void printColor(){
+        System.out.println(this.color);
+    }
+}
+
+// another class
+
+class Student{
+   String name;
+   int age;
+   public void printInfo(){
+       System.out.println(this.name);
+       System.out.println(this.age);
+   }
+//   Constructor is used to create object without return type
+//1) Non - paramterized constructor
+   Student(){
+       System.out.println("Constructor Called");
+   }
+//  2)  Parametrized constructor
+
+Student(String name,int age){
+    this.name=name;
+    this.age=age;
+}
+// 3) copy constructor java mai bnana oadta hai but c++ mai khud create ho jata hai
+Student(Student s2){
+    this.name=s2.name;
+    this.age=s2.age;
+}
+// Student(){
+    
+// }
+}
+class Main {
+    public static void main(String[] args) {
+    //   Object create
+//     Pen pen1=new Pen();
+//     pen1.color="blue";
+//     pen1.type="gel";
+//     // pen1.write();
+// // 2nd object
+// Pen pen2=new Pen();
+// pen2.color="black";
+// pen2.type="ballpoint";
+// pen1.printColor();
+// pen2.printColor();
+
+Student s1=new Student();
+s1.name="Mahesh";
+s1.age=22;
+s1.printInfo();
+
+Student s2=new Student("Mayank" ,23);
+s2.printInfo();
+Student s3=new Student(s1);
+s3.printInfo();
+    }
+}
