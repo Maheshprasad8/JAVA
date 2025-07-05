@@ -1,0 +1,49 @@
+class Student {
+    int rollno;
+    String name;
+    float marks;
+    boolean check;
+    Student(int rollno,String name,float marks,boolean check){
+        this.rollno=rollno;
+        this.name=name;
+        this.marks=marks;
+        this.check=check;
+    }
+}
+
+class A {
+    // final int x=10;
+int x=10;
+    A() {
+        x = 200;
+    }
+
+    // Optional: finalize method to show GC (though deprecated in modern Java)
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("A object is being destroyed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Student s1 = new Student();
+        // s1.rollno = 9;
+        // s1.name = "Mahesh";
+        // s1.marks = 88.5f;
+
+Student s1=new Student(1,"Mahesh",55.5f,true);
+
+        System.out.println(s1.rollno);
+        System.out.println(s1.name);
+        System.out.println(s1.marks);
+
+        // Create many A objects to make some eligible for GC
+        for (int i = 0; i < 1000000; i++) {
+            A obj = new A(); // creating object
+        }
+
+        // Suggest garbage collection
+        System.gc();
+    }
+}
